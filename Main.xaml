@@ -1,0 +1,502 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="FileDownloaded" Type="InOutArgument(si:FileInfo)" />
+  </x:Members>
+  <mva:VisualBasic.Settings>
+    <x:Null />
+  </mva:VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>1240,2364</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.Platform.ResourceHandling</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.CSV</x:String>
+      <x:String>UiPath.CSV.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>Microsoft.Exchange.WebServices.Data</x:String>
+      <x:String>UiPath.Mail.Exchange</x:String>
+      <x:String>UiPath.Mail.Exchange.Activities</x:String>
+      <x:String>UiPath.Mail.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.PDF.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+      <AssemblyReference>Microsoft.Exchange.WebServices</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="746,2299" sap2010:WorkflowViewState.IdRef="Sequence_24">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:String" Name="Cota" />
+      <Variable x:TypeArguments="x:String" Name="Grupo" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Folder="\\nas01\consorcio\publico\Administradora de Consórcios\Controles Internos\IV - Estrutura Operacional\Área Técnica\Automação RPA\RPA Automação Desalienar" sap:VirtualizedContainerService.HintSize="684,2188" sap2010:WorkflowViewState.IdRef="ForEachFileX_2" IncludeSubDirectories="False" OrderBy="NameAscFirst" SkipFolderWithoutPermission="False">
+      <ui:ForEachFileX.Body>
+        <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
+          <ActivityAction.Argument1>
+            <DelegateInArgument x:TypeArguments="si:FileInfo" Name="CurrentFile" />
+          </ActivityAction.Argument1>
+          <ActivityAction.Argument2>
+            <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
+          </ActivityAction.Argument2>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="650,1930" sap2010:WorkflowViewState.IdRef="Sequence_42">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="sd:DataTable" Name="dt_data" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="588,92" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="Info" Message="[&quot;CurrentFile.FullName: &quot;+CurrentFile.FullName]" />
+            <ui:ReadRange AddHeaders="False" DataTable="[dt_data]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="588,88" sap2010:WorkflowViewState.IdRef="ReadRange_2" SheetName="Plan1" WorkbookPath="[CurrentFile.FullName]">
+              <ui:ReadRange.Range>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String" Value="" />
+                </InArgument>
+              </ui:ReadRange.Range>
+            </ui:ReadRange>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_data]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="588,940" sap2010:WorkflowViewState.IdRef="ForEachRow_4">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="Row" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="554,825" sap2010:WorkflowViewState.IdRef="Sequence_41">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="492,92" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="Info" Message="[&quot;Cota: &quot;+row(1).ToString]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="492,82" sap2010:WorkflowViewState.IdRef="Assign_13">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[Grupo]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[row(1).ToString.Split("-"c)(0)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <Assign sap:VirtualizedContainerService.HintSize="492,82" sap2010:WorkflowViewState.IdRef="Assign_14">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:String">[Cota]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="x:String">[row(1).ToString.Split("-"c)(1)]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                    <ui:RetryScope DisplayName="Retry Scope" sap:VirtualizedContainerService.HintSize="492,338" sap2010:WorkflowViewState.IdRef="RetryScope_1" NumberOfRetries="2">
+                      <ui:RetryScope.ActivityBody>
+                        <ActivityAction>
+                          <Sequence DisplayName="Action" sap:VirtualizedContainerService.HintSize="450,163" sap2010:WorkflowViewState.IdRef="Sequence_44">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Always" DisplayName="Use Browser Chrome: Intranet Newcon" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="NApplicationCard_6" InteractionMode="WindowMessages" OpenMode="Always" ScopeGuid="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V2">
+                              <uix:NApplicationCard.Body>
+                                <ActivityAction x:TypeArguments="x:Object">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1099,4822" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                                    <Sequence.Variables>
+                                      <Variable x:TypeArguments="x:String" Name="Bem" />
+                                    </Sequence.Variables>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1037,940" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                                      <TryCatch.Try>
+                                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Crédito'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_19" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Timeout="10" Version="V3">
+                                          <uix:NClick.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/frmMain.aspx" DesignTimeRectangle="406, 177, 51, 44" DesignTimeScaleFactor="0.89999997615814209" ElementType="Text" FriendlyName="'Crédito'" FullSelectorArgument="&lt;webctrl id='CR' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CR' tag='SPAN' type='' class='span_inactive' aaname='*Crédito*' check:innerText='Crédito' /&gt;" Guid="2972e708-0c3f-449b-a84e-b5783328f320" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADcAAAAwCAYAAAC13uL+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHMSURBVGhD7ZRPagIxFIdzhC56F+mqJ2h6g3bTdUuvUMhBusjeXemykHVPEREHQVAZVEZffYkxk8nY6kDFFxL4GEnmz/vye4ZBwiPLUR2sKAqgymg0gsFgANPpFDabzU7JD1ZVFVBmuVzCZDKB+XweCZKXQ1arlRGczWaBYBJyCCY4HA7NbzeSkUPwf4hXN5KSG4/HsF6vd2pZjg5ZjipZrhNKAGMCVNvamThezhTL9gjVck8NJThI3b5WVQoEs+tacmBCmXklGHCpG/d25yg5U0CQAhb3m6AGfVAM8XJ+ToPkZ5ezH41EtAa1xRUqtkm5DcAEXMK+WPseMy9ElJzdQFx30nYD7Vy39v5bTkvg0S7XsUU4iXqb1RMy81yCxnnT4qFcmFyYYvDsCRyRXFsL1bFyLtl6ag4uvxst15CO5BrfNBt8enrd2xJ33+xmLOclHGESFyS3K+DggRLKhff6taC1LqctLbZo32o+yVAO6XKg+OdcYva99j3/daAQJstRJctRJctRJctRJctRJctRJZJ7/bwH5O3raY+bo8bLxx089m/god8zsNv3K0iVLEeVLEcVdv3cg1RJW64sS0iNxWJhrknKObIcTUr4AbQ1J3MEXOocAAAAAElFTkSuQmCC" InformativeScreenshot="6ea32a8473f92392193af767b789a508.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                          </uix:NClick.Target>
+                                        </uix:NClick>
+                                      </TryCatch.Try>
+                                      <TryCatch.Catches>
+                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="552,777" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ActivityAction x:TypeArguments="s:Exception">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                            </ActivityAction.Argument>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="546,708" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" UiBrowser="{x:Null}" sap2010:Annotation.AnnotationText="Login" BrowserType="Chrome" DisplayName="Attach Browser 'chrome.exe '" sap:VirtualizedContainerService.HintSize="484,396" sap2010:WorkflowViewState.IdRef="BrowserScope_1" InformativeScreenshot="451a9ae3b5c5f66eaa116d7f01f1598d" Selector="&lt;html app='chrome.exe' url='https://cookieprovider.sicredi.com.br/siteminderagent/forms/login*' /&gt;">
+                                                <ui:BrowserScope.Body>
+                                                  <ActivityAction x:TypeArguments="x:Object">
+                                                    <ActivityAction.Argument>
+                                                      <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                                                    </ActivityAction.Argument>
+                                                    <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="450,218" sap2010:WorkflowViewState.IdRef="Sequence_35">
+                                                      <sap:WorkflowViewStateService.ViewState>
+                                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                        </scg:Dictionary>
+                                                      </sap:WorkflowViewStateService.ViewState>
+                                                      <ui:Click AlterIfDisabled="{x:Null}" DelayBefore="{x:Null}" DelayMS="{x:Null}" SimulateClick="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'INPUT  btnSubmit'" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="True">
+                                                        <ui:Click.CursorPosition>
+                                                          <ui:CursorPosition Position="Center">
+                                                            <ui:CursorPosition.OffsetX>
+                                                              <InArgument x:TypeArguments="x:Int32" />
+                                                            </ui:CursorPosition.OffsetX>
+                                                            <ui:CursorPosition.OffsetY>
+                                                              <InArgument x:TypeArguments="x:Int32" />
+                                                            </ui:CursorPosition.OffsetY>
+                                                          </ui:CursorPosition>
+                                                        </ui:Click.CursorPosition>
+                                                        <ui:Click.Target>
+                                                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="9480f31a-c111-4099-89b5-2f590cf4ad96" InformativeScreenshot="fed575fcf985c48c7e8c49536429e765" Selector="&lt;webctrl id='btnSubmit' tag='INPUT' aaname='Entrar' /&gt;">
+                                                            <ui:Target.TimeoutMS>
+                                                              <InArgument x:TypeArguments="x:Int32" />
+                                                            </ui:Target.TimeoutMS>
+                                                            <ui:Target.WaitForReady>
+                                                              <InArgument x:TypeArguments="ui:WaitForReady" />
+                                                            </ui:Target.WaitForReady>
+                                                          </ui:Target>
+                                                        </ui:Click.Target>
+                                                      </ui:Click>
+                                                    </Sequence>
+                                                  </ActivityAction>
+                                                </ui:BrowserScope.Body>
+                                                <sap:WorkflowViewStateService.ViewState>
+                                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                                  </scg:Dictionary>
+                                                </sap:WorkflowViewStateService.ViewState>
+                                              </ui:BrowserScope>
+                                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Crédito'" sap:VirtualizedContainerService.HintSize="484,157" sap2010:WorkflowViewState.IdRef="NClick_25" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                                <uix:NClick.Target>
+                                                  <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/frmMain.aspx" DesignTimeRectangle="406, 177, 51, 44" DesignTimeScaleFactor="0.89999997615814209" ElementType="Text" FriendlyName="'Crédito'" FullSelectorArgument="&lt;webctrl id='CR' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='CR' tag='SPAN' type='' class='span_inactive' aaname='                                     Crédito                                 ' check:innerText='Crédito' /&gt;" Guid="2972e708-0c3f-449b-a84e-b5783328f320" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADcAAAAwCAYAAAC13uL+AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHMSURBVGhD7ZRPagIxFIdzhC56F+mqJ2h6g3bTdUuvUMhBusjeXemykHVPEREHQVAZVEZffYkxk8nY6kDFFxL4GEnmz/vye4ZBwiPLUR2sKAqgymg0gsFgANPpFDabzU7JD1ZVFVBmuVzCZDKB+XweCZKXQ1arlRGczWaBYBJyCCY4HA7NbzeSkUPwf4hXN5KSG4/HsF6vd2pZjg5ZjipZrhNKAGMCVNvamThezhTL9gjVck8NJThI3b5WVQoEs+tacmBCmXklGHCpG/d25yg5U0CQAhb3m6AGfVAM8XJ+ToPkZ5ezH41EtAa1xRUqtkm5DcAEXMK+WPseMy9ElJzdQFx30nYD7Vy39v5bTkvg0S7XsUU4iXqb1RMy81yCxnnT4qFcmFyYYvDsCRyRXFsL1bFyLtl6ag4uvxst15CO5BrfNBt8enrd2xJ33+xmLOclHGESFyS3K+DggRLKhff6taC1LqctLbZo32o+yVAO6XKg+OdcYva99j3/daAQJstRJctRJctRJctRJctRJctRJZJ7/bwH5O3raY+bo8bLxx089m/god8zsNv3K0iVLEeVLEcVdv3cg1RJW64sS0iNxWJhrknKObIcTUr4AbQ1J3MEXOocAAAAAElFTkSuQmCC" InformativeScreenshot="c940753c773252282b0708efe76b4648.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector, Image" Version="V2" Visibility="Interactive" />
+                                                </uix:NClick.Target>
+                                              </uix:NClick>
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </Catch>
+                                      </TryCatch.Catches>
+                                    </TryCatch>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Manutenção de Garantia'" sap:VirtualizedContainerService.HintSize="1037,157" sap2010:WorkflowViewState.IdRef="NClick_20" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/frmMain.aspx" DesignTimeRectangle="220, 224, 122, 28" DesignTimeScaleFactor="0.89999997615814209" ElementType="Text" FriendlyName="'Manutenção de Garantia'" FullSelectorArgument="&lt;webctrl aaname='                                                     Manutenção *' parentid='subs' tag='A' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl aaname='                                                     Manutenção *' parentid='subs' tag='A' type='' class='link_active' check:innerText='Manutenção de Garantia' /&gt;" Guid="756c095f-d2ad-4cb3-8625-042f79262963" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAH4AAAAgCAYAAADUp8wPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAL6SURBVHhe7Va7keMwDHVT24XnGnHmEpQ53Q5cgIPtQLldg2d2tgenPOJHgj/5pHXiA4I3I1MA+PAeSGv3eDyCwx7ceKNw443CjTcKN94o3HijcOONwo03CjfeKNx4o/h/jL9+ht3HMZx/vsP58BnmXowjgY0Hsf6wcDrgFqaPuH74Cve09nvcL8ewO92677ZiPonpke/m2pQ/XXvvxphPoF3G/vLdjXsdwBf2CgZ+gz+F8fvDsSSNp+j1xqNQLzb+NVhvPPZS6EOHZe3wrMLPV9g3h3QdCuOnSyyoDIGmppOaKNywnmzOhThep6Z5mGSQZDJlmFIc3yoIaWZUM0JzUIKXp05d9Wq/0bCl3PgXMSnj8WZaykUu7d8K5BV9S42I3PMx9gf1Kb/LHzUjTriO/ZI26bfoOtyrj9L4KxCSRvhZFb7H92my0zoTYWFQLLXeGB+fsUmMl3231YQ69HyLPLmGrlmcjIqPAMXinnmoMFfxbXjq3BTTxxw1k+f8F0fDnrkM+CM34U85TV+KQ38v+l2jMp7ETJtCYt1cc+IqQVP8aF0bT83oKc0faL1ciBchWuhTk3pQ3HtiZC7wO+uAsQUvHcfo1ZdYtY5xRQ1losREdPmng5i5jYzv78XrFRrjMTEmFAPAhYmYvoZgfWTSaL02vmfkKHcQz8NI8VUvvCfErTZ+QTgE7ivGKFQaCIdcszJ+if8/Gz/aC3JbtMazuPChV08UiCRmoGBqw2WDdbxeZ7JCMDU6qlmupzraABaxEaiuKUh7SrwW/UluhO6rXaM80pWeqdee8SMO64xv94LfLTrGV82kwvwcSeFVBB+CiyZV8eojUa5E2o9EoLiB0LpmEV+Kgmsx7hz5F7kSPxAC+8XclR93jCIO6whX/S72dpE+KuNH/JF7x3jRAGopbfp7yR4l2Pj3whyHiMRwbMVbGo8TvzDNjud4P+Pl6l64eh3P8aYn3vFbuPFG4cYbhRtvFG68UbjxRuHGG4UbbxRuvFG48SbxCH8Bs6w85Q2OqKAAAAAASUVORK5CYII=" InformativeScreenshot="18c07588e6cf638fb56fa6f5e215ea11.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Controle de Alienação'" sap:VirtualizedContainerService.HintSize="1037,157" sap2010:WorkflowViewState.IdRef="NClick_21" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/frmMainMenu.aspx?applicationKey=3OuowPITZL0CSJW2Gkc8lfLUgbh02WGwCDJffeqHBw0cKAASO+x3RAFfHLAK25p0FVyo8eE75lFVc8y9ETn9jA==" DesignTimeRectangle="72, 376, 106, 12" DesignTimeScaleFactor="0.89999997615814209" ElementType="Text" FriendlyName="'Controle de Alienação'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;form&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;table' idx='3' tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='A' class='ctl00_Conteudo_ctl00_tvwMenu_0' aaname='Controle de Alienação' check:innerText='Controle de Alienação' /&gt;" Guid="8e8b1ece-2221-4565-a345-3ff0ff4078ee" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAG4AAAAQCAYAAAD3c0pKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJeSURBVFhH7VbLccIwEKWptBEq4ZYefPKRGiiAQ0rg7ibIgR4U7U/7VhYQweAMM34zmhh5tfv2Pa0nm7TiLbEa96ZYjXtTrMb9O37SYfeZNuOU0rRP2+OP7t/GzLjTmJN82Nqnk+534/Kdtl3npzR8fKXDRX924ZGzIFiB5zkfv6p3LwLppKZtOnoA4xqNcLIHzes+u7BxJNhun4a8nOMzHJaFG3dlQs6XKS99pluo02gjLTczC2BTysaTAP4bY+QcvC81o2g4+e3Ph140iuHcPWeFN72zvwLnIJz1ErM2ljPyHUbTBAznS+scBpsF3G/mRr7QH+ZWFOOY6O47nfX3DGGCRHgixOdsn0loEYgPMUrICHrdK6JVhhoCX67197PCATiXvlscYo64733wZdG6p8nqz+PFRNGA9cuxRXPqQ7lgvqi9wCcODrUQBZHEdmP9HDRZG9eKIZRJ932cmPlNJETzMef9sxlUs/RCuYyP5yn9VhMhy/j6NNX6SP8aX/JE8QuwBuvkxgoqzTLufiqDQQsaNxM74LZxt8/eMtfzRONaglNsyzjhZv3eyyNcdL8MT49xVhDMQfHDM5DuNy6K7u8q0Rq1ECEn1/rrWeBoaFwezsNaSI423+vGyT5qivGuAV40NlF74mfzImgvAOMIWigXkBWDRRR5N2+EAKKwGFI8xhCkiVgDzmbgVFitCODa888JiRC4EExs5+BGZFgvvNqXAuNdp5zrCPUwj+2xKbI3HHEq0QvvzVAZt+K1yGaM9aV5DKtxS4Omzib5CazGLQj7hLY//X1YjXtLpPQLlHDTdLPFsYYAAAAASUVORK5CYII=" InformativeScreenshot="fd07d30e849861ca52f6a79ef8e4c8ed.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Grupo'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1037,217" sap2010:WorkflowViewState.IdRef="NTypeInto_7" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Text="[Grupo]" Version="V3">
+                                      <uix:NTypeInto.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx?applicationKey=ANx+zCZX8oycxcGPt4hwFQ==" DesignTimeRectangle="140, 329, 54, 22" DesignTimeScaleFactor="0.89999997615814209" ElementType="InputBox" FriendlyName="'000000'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='text' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='text' class='text' aaname='' /&gt;" Guid="cf03e9c3-9320-499a-b5e3-e49f19e7475e" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAaCAYAAADmF08eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH8SURBVFhH7ZhJcsIwEEV9Qx/LR/FRfAp2jBvmYizo+EluWbIDCYkWCPhVXRWI1Hq/W4qtZPImel+jm81GptOpjMdjGQwGScVoNDLseOgqMMpAYjabyWKxkOVyKavVKomAFWbY1YcvZ5Qq8Mv5fC7r9Vq2263sdjsT+/3+qUM5YcY0HobDYdBZZ5SWUw0GMulwOMjpdJLz+ZxEwAoz7HjAC55UzijdpPVUhQlMvlwuJq7X61OHcsIMOx7w4m9fZ5TDzD6nIlRHDYpUUmSZZEReysQON5qUuf2+jqJqvmxUFc2cLJfSnxQ9n5Uahh0PeMGTKjCq21a7WS8tZZ5J3mQ2iylBVdSLFjV2rUkpuQdggNWEPy56vlDaVd2+d41yuBncdtOroLeIWdyVvW9Af7Y5tEOx84WCGXY8PGbUVNarnlfpcHH72YJayBbEg46dr6O/G+1uEwfWX6wF61bcGxs7X0efjtb6nFFrtL+gg/G3odcZ+/HWX8nY+UL9wyiyFYz33Iudr9VDRsPnaFr69XP0+zejNAQrzD++Gfnvusfj0XVVDT9zKCfMsN9919XbC1c0KsIEqsPkFAJWmGHHw83bC3c37nCp30dhv3sfRbSaAVSD1rPPOdQpBKwww44Hf9uiwCiiCrScgRzmlIL/c8Hud1LVM/qq+hh9LYl8AfmzseLLemzKAAAAAElFTkSuQmCC" InformativeScreenshot="b3d27b9a01f6cbec27c005c84c9c9e10.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <uix:Target DesignTimeRectangle="140, 312, 54, 13" ElementType="Text" FriendlyName="'Grupo'" FullSelectorArgument="&lt;webctrl class='legenda_campo' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='legenda_campo' tag='SPAN' type='' aaname='Grupo' check:innerText='Grupo' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAARCAYAAACM0L/dAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADiSURBVFhH7ZSLDcMgDETZ0GN5FEZhFMZwza+co4RUatooJCchBZmPn33ByU30gM6mB3Q2rYAGYefE4eBQY9eVBY1eSMEsVxRPJD7W6UVlQAM7oRFRLgQL67rW6bSnFyYVpc2TM0jX0tsZ5uzA3THkdedvBaCY5IZWOj4GBbi8tzoDv/NUizG8+HsNQPFfxQRZI117He1NhFjqJoKtnHu0PrAuJDwLaLkQE0/aB7X23ADN/2Tdm9f12J+t25QSbJYtw4IsKl/hyqOiD5XpKJ6D3VWd9xgdraV1z9UDOptuAiryAh6AgCwExnqMAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NTypeInto.Target>
+                                    </uix:NTypeInto>
+                                    <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into 'Cota'" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="1037,217" sap2010:WorkflowViewState.IdRef="NTypeInto_8" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Text="[Cota]" Version="V3">
+                                      <uix:NTypeInto.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx?applicationKey=ANx+zCZX8oycxcGPt4hwFQ==" DesignTimeRectangle="199, 329, 54, 22" DesignTimeScaleFactor="0.89999997615814209" ElementType="InputBox" FriendlyName="'0000'" FullSelectorArgument="&lt;webctrl name='ctl00$Conteudo$edtCota' tag='INPUT' type='text' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl name='ctl00$Conteudo$edtCota' tag='INPUT' type='text' class='text blockalpha' aaname='' /&gt;" Guid="06bed473-fb8b-4739-a5b3-2a7fc362e896" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADoAAAAaCAYAAADmF08eAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH1SURBVFhH7ZhtjoIwFEXZIctiKSzFVfhPQf/4HUGNvuEUXtOKMKNjMlTmJi8ZtG3uebcInUhGovGC7vd7WSwWkmWZTKfToGo+nxvvMNzLA2UgtVwuZb1ey2azke12G0ThFc94Vw5XFpQu8OVqtZLdbieHw0GOx6OpoigGXeoTz0DDMJvNvGQtKJHTDQYyqSxLOZ/Pcrlcgii84hnvMMACk8qCkibR0xUmMPl6vZq63W6DLvWJZ7zDAIu7fS0oNzP7nI7QHQXM01iiKDKVTJrBRhNJms+jOJW8+dQoTyXW7/xJPev9TgqMdxhggUnlgeq21TRlklSGkgqpkjEfS2qIcknjSOL6ohrmAtUNqC/9cd3rvUeaqm7fXlBubgbbNC2AaxoYx2QLoPnbXFZrNIl3r/ce4RnvMDwFSlKuEZvcHUx93YAD7W5lpwmd671JL4JmrY5bY26CyAF1EzSyY9sJDgR0NImO6B5tAyicb9JP5u9+dV8HrWRSePjcG9ZzFD0F6j1HA9OPn6OP3oxCEV7x/O2bkfuuezqdbKoKPORSn3jGe++7rp5eOKLRESbQHSaHUHjFM95h6Dy9cHbjDBf6eRTvvedRRNQMoBtEzz7npg6h8IpnvMPgblvkgSK6QOQM5GYOqfg/F97dJFUt0E/VP+hnSeQLz+ops0kf2WsAAAAASUVORK5CYII=" InformativeScreenshot="674a62cda7c6e2a402a01b30d146ebb7.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <uix:Target DesignTimeRectangle="201, 312, 36, 13" ElementType="Text" FriendlyName="'Cota'" FullSelectorArgument="&lt;webctrl aaname='Cota' class='legenda_campo' tag='SPAN' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl aaname='Cota' class='legenda_campo' tag='SPAN' type='' check:innerText='Cota' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACgAAAARCAYAAACvi+4IAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADDSURBVEhL7ZPBDcMgDEW9ocdiFI/CKIzhYhsIoU1oBK048CQOdhLx/K0AL84WHGULjtIIenYADNVxPj26IhAjuPjlb6gETQ4ppFqIPSSuO2/8SzAQMtzFpSI52SwUmLBKXIdpeoPyRdC7Nr0aS7f4e5dkIp0Eu4N3+E5QJE6rFmFkff2ToAxQEoxnhuDtpE8EtU7PtJyUoF169ZM8WHFTy2YmCQomcqznSMIuzv3zSlVC+km61PEgTktwTbbgKIsLMr8AoQfs38QFhtIAAAAASUVORK5CYII=" SearchSteps="FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NTypeInto.Target>
+                                    </uix:NTypeInto>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Localizar'" sap:VirtualizedContainerService.HintSize="1037,157" sap2010:WorkflowViewState.IdRef="NClick_22" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx?applicationKey=ANx+zCZX8oycxcGPt4hwFQ==" DesignTimeRectangle="736, 366, 72, 22" DesignTimeScaleFactor="0.89999997615814209" ElementType="Button" FriendlyName="'Localizar'" FullSelectorArgument="&lt;webctrl name='ctl00$Conteudo$btnLocalizar' tag='INPUT' type='submit' /&gt;" FuzzyMatches="10000" FuzzySelectorArgument="&lt;webctrl name='ctl00$Conteudo$btnLocalizar' tag='INPUT' type='submit' class='button' aaname='Localizar' check:text='Localizar' /&gt;" Guid="17d4afed-e653-435a-9a7e-f13a004f2add" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAAaCAYAAAAdQLrBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHzSURBVFhH7ZhNbsIwEIV7ydzFJ8lJsu4JiLriT7AJe5BAsJ7mTTzO2JikkWiayh7pSeC8cTwfY0v4g3JMigxsYjwBu1wudDweab/f02q1SlKoHQzAIgwP2G63o81mQ6fTia7Xa9ICA7AAEx0O2Pl8ZgPM9/udHo9H0gIDsFiv18xGwgE7HA5MNcPqBRZgAjYSDth2u2WiscSUBSZ6WzpgOOwysGeBCdhIZGAjei+wpiJTGKqayLN3id9RUo3PdUmFqagJPb+o/w3sDzQjsIYqU1BRdCpr9Yzz7DPXMb7fjcc6TOeHfnjUuLy3LgsyxvCYqZp+LSOaDRgW6BchvppKlcOFtAWwv6xtPjy22Bgw9vSSOcL1NFULyPq99UzQTMC6bum7qvvORf3oHFL5I8B80IGUf9A3oJmAqQ6xY9IF+lf3cniutiilMWCxuRiMnkcBm7IVRQvtMPU8zH8FLDYPxsQbeBYOzP7SujjxBTnsKz99YOwfABaCEXnjHfQFArOt7yQw7ILtuN6eAoTlQbVj7VnjCowA+8JWFK8TPPqd7TrqPncZwBLQS2D5z3dcYAI2Eg6YXO/EklLWy+sduUC83W75TqzV6AUiAq0HA6jCnLLAACz0dkR4wBCgiRbEpRkOuxSF2sFAd5bEE7Acw5GBTQqib/1AuWFqGam2AAAAAElFTkSuQmCC" InformativeScreenshot="af687080ce78d5a006a7ae7ccd670a7e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="1037,385" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                                      <TryCatch.Try>
+                                        <uix:NCheck Action="Check" DisplayName="Check/Uncheck 'unchecked'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheck_1" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Timeout="10" Version="V3">
+                                          <uix:NCheck.Target>
+                                            <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx" DesignTimeRectangle="50, 450, 59, 12" DesignTimeScaleFactor="0.89999997615814209" ElementType="Text" FriendlyName="'unchecked'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='LABEL' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='LABEL' class='' aaname='Desalienar' check:innerText='Desalienar' /&gt;" Guid="ee1443e3-3f11-4788-9aab-d3d0a1fe39e5" InformativeScreenshot="4ff4d54aeb3df468739eac32b3a1bef2.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                          </uix:NCheck.Target>
+                                        </uix:NCheck>
+                                      </TryCatch.Try>
+                                      <TryCatch.Catches>
+                                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ActivityAction x:TypeArguments="s:Exception">
+                                            <ActivityAction.Argument>
+                                              <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                            </ActivityAction.Argument>
+                                            <Sequence sap:VirtualizedContainerService.HintSize="496,394" sap2010:WorkflowViewState.IdRef="Sequence_43">
+                                              <sap:WorkflowViewStateService.ViewState>
+                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                                </scg:Dictionary>
+                                              </sap:WorkflowViewStateService.ViewState>
+                                              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_17">
+                                                <Assign.To>
+                                                  <OutArgument x:TypeArguments="x:Object">[Row(0)]</OutArgument>
+                                                </Assign.To>
+                                                <Assign.Value>
+                                                  <InArgument x:TypeArguments="x:String">["Erro - Usuário não tem permissão para acessar a cota."]</InArgument>
+                                                </Assign.Value>
+                                              </Assign>
+                                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="Trace" Message="[&quot;Erro - Usuário não tem permissão para acessar a cota.&quot;]" />
+                                              <ui:Continue sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Continue_5" />
+                                            </Sequence>
+                                          </ActivityAction>
+                                        </Catch>
+                                      </TryCatch.Catches>
+                                    </TryCatch>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Confirmar'" sap:VirtualizedContainerService.HintSize="1037,157" sap2010:WorkflowViewState.IdRef="NClick_23" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx" DesignTimeRectangle="806, 560, 72, 22" DesignTimeScaleFactor="0.89999997615814209" ElementType="Button" FriendlyName="'Confirmar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='button' aaname='Confirmar' check:text='Confirmar' /&gt;" Guid="aeed96b8-48a6-4dd0-9ffb-fc237ba6fe28" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAAaCAYAAAAdQLrBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH9SURBVFhH7ZhLrsIwDEXfJtlLVpI1sIAsgwz5SIzKnAEIxn65zqdpklIqqnaQWLoSpa7jnthB+I+azbIGbKZlwO73O12vV7pcLnQ4HKoU3h0MwCK1AbDz+Uyn04lutxs9Ho+qBQbH45GZxBaAgSZgwfn1etH7/a5aYAAWgBZXWgCGEgTVBqsXWIAJ2HgLwFB6IFp6sGaBCc40bwEYDrsGLBeYgI23H4B1pMSOdjsvSbro9720dLHEnvYmttRlvzW1EDAHS+r+Oy1/hIaYglRXuredlgE2AgcVIlRnrztFolB97CNlf08o6pJqldpec4VxHEGC75s4WNs8o3w14rtorbB+2gG8TiGey2tMiwDj1omrK5MmGSXP/i5h23YuUfeitvUiSPHngY8Rb9bQL8SLNnKYo82nGG9CiwHrd7IgTiraPberaLfhi4xAyoBFrZpU9yCXdN2gD/EmtE6FZS2LHe6BpW0zDSyK5VqS28toFBh/RvX1Ksab0CLAciBWnTJnA5JPk+LrNYHZ54vrbALMJZD/SvpS/3yGrQ6Mc9sUGOSghZJPzgVOzN/rE1wHmPPz65uNDX7bAatDo8Daf8mywCQe8QRgflpReqhmjU4r/Dzs+Xy2EY/R5DwMhtKDA6jCuWaBwceJqzfQRAm2mf4XM/1m09aAzbQGbJYR/QMOwarHZIkrfgAAAABJRU5ErkJggg==" InformativeScreenshot="9c852a1340d240e7c57d67e442604875.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="True" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="1037,157" sap2010:WorkflowViewState.IdRef="NClick_30" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Timeout="3" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable DesignTimeRectangle="607, 158, 64, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;ctrl name='consorcio.sicredi.com.br diz' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='consorcio.sicredi.com.br diz' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' automationid='' check:fulltext='OK' /&gt;" Guid="87f90896-6a8c-4551-b5a5-f4b3459d6308" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAAkCAYAAAAw55zoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJqSURBVGhD7Zq/TgJBEMZ9Dl9An4A38AWk8wnsLSxMrCi1MlrQWigdBYk22mGhxuYKCq8iFKICJ5I7jz+O++0yx5xQehtzt18ycfZuOfP92J2FDGvklFIKSNOPqXzWp82DLq3vveQ64BFe4VkqAXJ0/bnyhUUIeGdpIKCEGxuK2uV9SEH4rW/mXfAKz/DOK0UD2T7t6YtX3hddq9g6fk/o5TVKlTftFVAwBoMECNcMCBPlC/MceOOxG5CDAaSB8ASZFyWkZ8gBEZ4hB0R4hhwQ4RlyQIRnyAERniEHRHiGLALpU7U1oWCs/43SjNr+iHYrfD+kZ3U18IdmXBnRI+b2ItpJPedvA5K5JSCvVO3g68CMnr0R7Z9/0MnTmPBRKOqGc8MSSI9qXTV/PKFa9fez/jYgmdsBcvGlzbef+qnrpTssgW96bGC8ALJzP6FIwWvWX1PzswhI5laAlL2perJ6t5PtwWEgdFuDJA86MbXxV4EppeZmE5DMrQA59GdEYUyHS/eG1Ax5mxggRlOqZ7xVOCCZWwGy25qvkKV7BkLbw7dt3jKRlWLKAcncTg1pxKomLNeQsqoVWA23FxgzELVV6jEFnIv5WQQkcztA+NSQp4ynjmB1JeqM5qYXQHAq6W2GgnuTbWGFZG4JiIrKgKr+VEMwMp9DFttCAsHY1Jesj15I5vaA/NOQniEHRHiGHBDhGXJAhGfIARGeIQdEeIYcEOEZckCEZ0gD4XYeVNRGFRhAGohsZSKK0sqE15WtTG52o52HfmdRmt21hyhp46aa3ZD7OYRRAgQCJSwdril5DniEV14ZrBQQJ6IfpiFQNBWH+t8AAAAASUVORK5CYII=" InformativeScreenshot="f6887f81e539e8b78b3b4562ed2bf3af.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Intranet Newcon - Google Chrome' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" ContinueOnError="False" DisplayName="Click 'Confirmar'" sap:VirtualizedContainerService.HintSize="1037,157" sap2010:WorkflowViewState.IdRef="NClick_24" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Timeout="10" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx" DesignTimeRectangle="806, 494, 72, 22" DesignTimeScaleFactor="0.89999997615814209" ElementType="Button" FriendlyName="'Confirmar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='button' aaname='Confirmar' check:text='Confirmar' /&gt;" Guid="7ccf02c8-62f7-4f6a-8a2e-6d80f7b75905" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAAaCAYAAAAdQLrBAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAH9SURBVFhH7ZhLrsIwDEXfJtlLVpI1sIAsgwz5SIzKnAEIxn65zqdpklIqqnaQWLoSpa7jnthB+I+azbIGbKZlwO73O12vV7pcLnQ4HKoU3h0MwCK1AbDz+Uyn04lutxs9Ho+qBQbH45GZxBaAgSZgwfn1etH7/a5aYAAWgBZXWgCGEgTVBqsXWIAJ2HgLwFB6IFp6sGaBCc40bwEYDrsGLBeYgI23H4B1pMSOdjsvSbro9720dLHEnvYmttRlvzW1EDAHS+r+Oy1/hIaYglRXuredlgE2AgcVIlRnrztFolB97CNlf08o6pJqldpec4VxHEGC75s4WNs8o3w14rtorbB+2gG8TiGey2tMiwDj1omrK5MmGSXP/i5h23YuUfeitvUiSPHngY8Rb9bQL8SLNnKYo82nGG9CiwHrd7IgTiraPberaLfhi4xAyoBFrZpU9yCXdN2gD/EmtE6FZS2LHe6BpW0zDSyK5VqS28toFBh/RvX1Ksab0CLAciBWnTJnA5JPk+LrNYHZ54vrbALMJZD/SvpS/3yGrQ6Mc9sUGOSghZJPzgVOzN/rE1wHmPPz65uNDX7bAatDo8Daf8mywCQe8QRgflpReqhmjU4r/Dzs+Xy2EY/R5DwMhtKDA6jCuWaBwceJqzfQRAm2mf4XM/1m09aAzbQGbJYR/QMOwarHZIkrfgAAAABJRU5ErkJggg==" InformativeScreenshot="3732fe3971a3611f48f20ebe8da03aed.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                    <uix:NGetText DisplayName="Get Text 'Descrição do Bem'" sap:VirtualizedContainerService.HintSize="1037,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" TextString="[Bem]" Timeout="10" Version="V3">
+                                      <uix:NGetText.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx" DesignTimeRectangle="45, 449, 785, 15" DesignTimeScaleFactor="0.89999997615814209" ElementType="Text" FriendlyName="'MOTOAQUATICA PERSONAL'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='2' tag='TD' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TD' class='' /&gt;" Guid="8c245dc6-1097-4d79-963d-911f500c343f" InformativeScreenshot="24a5b41b07cd4b5c07ecb9a7d7976a66.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                              <uix:Target DesignTimeRectangle="45, 426, 785, 23" ElementType="Text" FriendlyName="'Descrição do Bem'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname=' Descrição do Bem' check:innerText='Descrição do Bem' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAxUAAAAbCAYAAAAK/6LnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO+SURBVHhe7d3dauJAFMDxPF3VvFHV+BRF/HqKikp6sewDtFAkWC/aUtoioqiPcHYyM5lMamSxLrR1/wd+aGbOnExyNafCbiAEQRAEQRAEQRAnBE0FQRAEQRAEQRAnhW4qgiAAAAAAgM9Jm4rb21vZ7XYAAAAAcDSaCgAAAAAnoakAAAAAcBKaCgAAAAAnoakAAAAAcBKaCgAAAAAn+QFNxY20gkBaNzu5aYUymJflAAAAAPgqe03FfBDu/buz6YHeX/TvmIYhHMxL5qz5QFpqXu8rHMi8LOev8sakfL6o7B18/t4AAADAeXNNxXa71R70gbolsb3exi11HcrgwV7/SLFpKuKyuX177+DI9QAAAMD/xDUVm81Gm/XTA3Uksb3ebGbSDwMJ+zP33fz1PpT+zObEkR1L5WvjKBsLJIq9WqH5JSCKY4nUp6ldll8cO1Q7CPsys+M5U1vPR5H+7u/BrY3iD+tK3sGsL6Fb79XNcux89lzpeF/XSL977wkAAAA4Q66pWK/XWtKrqYNwUyb2OjVpqsNxc2Lmaj1J0vFJ0+Yl0quZ+Sxfc/MluVmN9USa6uBd6yUH8m2tVNKTmsptTj7Om5q6hpev91zYq1lbeAZ7f13TW2veQdoQeOzzZe/C5aW17N7MHrxnOrA3AAAA4Jy4pmK1WmlJ1zQVY3u9WiXSTQ/G3UTG6YHaP2gHNekmKmdsDu3+mK5T60ri6hRrmeuxOYCr6/J8pVBbNQDj/dp6X81xYV1xzNwnXVsc/7gf4/A7+K0//f3ovKRrGh5V37/XofoAAADAOXFNxXK51KadqjooN2Rkr5fTjlSDqnSmdq7akWk2t2cqnWog1c5UlqNGXsfV8OZ1/kga6gB+MP9Xfm8zFkhjpL7rXDvu39PtYymjhjrwZ3vV+WZt8fnM/XVNb+3eO7D3CBojU1d9+vmFvRVqlu8NAAAAOCeuqVgsFtp9u6IP4L760MwtFvfSruTjlfa9Hh/W/fy6DG0tf9zkmvXZusViKPUDdfx8M1aRire2cM/60Nbzmdpmvq6/m+cofwZf2TvIn8urq+ia922pZN/tvH+vsnsAAAAA58I1Fe/v79/AtVzqw/qlXJfOAwAAAPhuXFPx9vb25e6uLswvABdXclcyDwAAAOD7cU3F6+srAAAAABzNNRUvLy8AAAAAcDTXVDw/PwMAAADA0VxT8fT0BAAAAABHc03F4+MjAAAAABxNNxX5/8UAAAAAAEfKfqkgCIIgCIIgCIL4TNBUEARBEARBEARxQoj8ATV+CgoBcVJHAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NGetText.Target>
+                                    </uix:NGetText>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1037,92" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="Trace" Message="[&quot;Bem: &quot;+Bem]" />
+                                    <If Condition="[bem = &quot;Não há bens cadastrados.&quot;]" sap:VirtualizedContainerService.HintSize="1037,1277" sap2010:WorkflowViewState.IdRef="If_4">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="496,329" sap2010:WorkflowViewState.IdRef="Sequence_39">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_15">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Object">[row(0)]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Object">["Bem já Desalienado"]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="Info" Message="[&quot;Bem já Desalienado&quot;]" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="496,1117" sap2010:WorkflowViewState.IdRef="Sequence_40">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Descrição do Bem'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_26" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx" DesignTimeRectangle="45, 426, 785, 23" DesignTimeScaleFactor="0.89999997615814209" ElementType="Text" FriendlyName="'Descrição do Bem'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='TH' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='' tag='TH' class='' aaname=' Descrição do Bem' check:innerText='Descrição do Bem' /&gt;" Guid="f604f392-1ac9-4e87-a206-1e206e83ebd7" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAxUAAAAbCAYAAAAK/6LnAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAO+SURBVHhe7d3dauJAFMDxPF3VvFHV+BRF/HqKikp6sewDtFAkWC/aUtoioqiPcHYyM5lMamSxLrR1/wd+aGbOnExyNafCbiAEQRAEQRAEQRAnBE0FQRAEQRAEQRAnhW4qgiAAAAAAgM9Jm4rb21vZ7XYAAAAAcDSaCgAAAAAnoakAAAAAcBKaCgAAAAAnoakAAAAAcBKaCgAAAAAn+QFNxY20gkBaNzu5aYUymJflAAAAAPgqe03FfBDu/buz6YHeX/TvmIYhHMxL5qz5QFpqXu8rHMi8LOev8sakfL6o7B18/t4AAADAeXNNxXa71R70gbolsb3exi11HcrgwV7/SLFpKuKyuX177+DI9QAAAMD/xDUVm81Gm/XTA3Uksb3ebGbSDwMJ+zP33fz1PpT+zObEkR1L5WvjKBsLJIq9WqH5JSCKY4nUp6ldll8cO1Q7CPsys+M5U1vPR5H+7u/BrY3iD+tK3sGsL6Fb79XNcux89lzpeF/XSL977wkAAAA4Q66pWK/XWtKrqYNwUyb2OjVpqsNxc2Lmaj1J0vFJ0+Yl0quZ+Sxfc/MluVmN9USa6uBd6yUH8m2tVNKTmsptTj7Om5q6hpev91zYq1lbeAZ7f13TW2veQdoQeOzzZe/C5aW17N7MHrxnOrA3AAAA4Jy4pmK1WmlJ1zQVY3u9WiXSTQ/G3UTG6YHaP2gHNekmKmdsDu3+mK5T60ri6hRrmeuxOYCr6/J8pVBbNQDj/dp6X81xYV1xzNwnXVsc/7gf4/A7+K0//f3ovKRrGh5V37/XofoAAADAOXFNxXK51KadqjooN2Rkr5fTjlSDqnSmdq7akWk2t2cqnWog1c5UlqNGXsfV8OZ1/kga6gB+MP9Xfm8zFkhjpL7rXDvu39PtYymjhjrwZ3vV+WZt8fnM/XVNb+3eO7D3CBojU1d9+vmFvRVqlu8NAAAAOCeuqVgsFtp9u6IP4L760MwtFvfSruTjlfa9Hh/W/fy6DG0tf9zkmvXZusViKPUDdfx8M1aRire2cM/60Nbzmdpmvq6/m+cofwZf2TvIn8urq+ia922pZN/tvH+vsnsAAAAA58I1Fe/v79/AtVzqw/qlXJfOAwAAAPhuXFPx9vb25e6uLswvABdXclcyDwAAAOD7cU3F6+srAAAAABzNNRUvLy8AAAAAcDTXVDw/PwMAAADA0VxT8fT0BAAAAABHc03F4+MjAAAAABxNNxX5/8UAAAAAAEfKfqkgCIIgCIIgCIL4TNBUEARBEARBEARxQoj8ATV+CgoBcVJHAAAAAElFTkSuQmCC" InformativeScreenshot="95a44d6d17d7da7fa109dd216951fa11.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                                <uix:TargetAnchorable.PointOffset>
+                                                  <uix:PointOffset Position="BottomLeft" X="18" Y="9" />
+                                                </uix:TargetAnchorable.PointOffset>
+                                              </uix:TargetAnchorable>
+                                            </uix:NClick.Target>
+                                          </uix:NClick>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Desalienar'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_27" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable BrowserURL="https://consorcio.sicredi.com.br/CONCR/frmConCrPrcControleAlienacao_Filtro.aspx" DesignTimeRectangle="704, 531, 81, 22" DesignTimeScaleFactor="0.89999997615814209" ElementType="Button" FriendlyName="'Desalienar'" FullSelectorArgument="&lt;webctrl tag='INPUT' type='submit' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='INPUT' type='submit' class='button confirmar' aaname='Desalienar' check:text='Desalienar' /&gt;" Guid="e1e16f74-c7a5-4252-a673-cfe046438dda" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFUAAAAaCAYAAADG+xDjAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN+SURBVGhD7ZnNTxNBGMb907wZT57qTT0pJogIRrJgCBGEmKAeiOnFgwYumGgwsIrI93eUbgvRUhSDbEOkoJV2254f+84yuzPb2RZoCQf3TZ4EZt53duc3zwxk9hyCqHkEUE8hSqCm02lsbm5iY2MDkUgkkI+ID3EiXt6QoCYSCayvryOZTCKbzQaqIOIUj8cZNzEcqEScgFJyPp9HoVAIVEHEiXgRWNGxDlSyMpEPgB5PxIu4ET8eDlSyMFFXFQYqL+JGZywPByodvgHUk4m4ET8evlBNXUMoFJKl6TCFwWomI3w4tgldCyFsKHLOUBkrg2+/Ekj+NpX9x4PqgWiETwmsA1XRd8bK5rKImit4tvgEg8YAfqa2WJuUUw3UQsFAuOhYx0kEQ+VisT0UhuGpd/rChpvP6j1ONXVoinFocbVw2O3zfbY7FqvR7N2n6WrHqbSajKJvsRcdc3fRNtqMgYWXMFPbUk6VUA9fjl6KTViDblK7DcOGROB4uz2OPQk7x5mQWK+EKi+guEvYzxzyIXiWJ72TPAexnj3fo4PcAfYze7DyltO2ZsbQO/sQXcutaJ28jeY3t/AuOozUn12ptmZQS/odMDJUfwl5KqjMcYLLGTD7dwaIu9zrblHOuN4aWZlcBgvbMxj80o/EbhxWzkJs20DPZEcRqIbW6UY0vLqBkchb7Kf3SuqrhOq6jfUfbjFXsntYmxe8lF8Jqpjr5vOFFd9JcrRYI0B1a1ztHaQw8eMDnn7uRnfRkX0LvRhZG0Ln+H10fWqDNtWA6/1XMRYbRTqTLqknVQnV3ZKs32flRbl58nY+klNLnm/LFypbCMHdwhh+UP9m01jYmkHPfDs6l1rQtVR05mQTHiy3oG32Dq48vwx9ZZj9B+Ct5aoKKnMBb/OcX06fsE35OPZkZKhs/HJQlfnu9q8M1W6vBJVr7vs0+0PUPt+ER6vtuDdVjwuPz2M89lGZL+p4UGn7iPJAtifB+2WQqhqxXdMNhStFqEWJx4hnAZVQOUieb8jncDmopImv42h8fRN1Q9dwqe9iEeiYMs+rI0P9X/U+qqP+RR0mVyeU/SoFUCsoa2Wxs79zrIslX6jBhcrJRdzEO1UHKr/6UxUFKi/fqz9+SW1ZVnCnekRVvKSmIAtTApGn5EDlRZzKfk7hQcTJysGHv/I68oe/IGoTAdSaB/APVbq9IdjnOAcAAAAASUVORK5CYII=" InformativeScreenshot="8e9b96a88a53a2c174bc4b4797c40303.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                          </uix:NClick>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_28" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable DesignTimeRectangle="505, 178, 79, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;ctrl name='consorcio.sicredi.com.br diz' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='consorcio.sicredi.com.br diz' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' automationid='' check:fulltext='OK' /&gt;" Guid="5d438598-cfd4-49b3-8833-e9ea503ac58b" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAFMAAAAkCAYAAAD1lQZ5AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAKRSURBVGhD7Zq9TttQFMd5jr4APEHegBdoNp6AnaEDElPGdqrKkJWBZsuAVJZ2CwNFLB4y4CnK0EATXBrZOB8c7v86xzmuA1S9lXORzk/6i2P7BtBP98Ogs0HKf6MgsxOmVD8c0db+gN7s/dA8EfiBJ/iS5DLfn/5e+UHN84E3xsqEYTzYNMY/n8cUxQ/2ofI08ARf8MYz1Mp8+2lob34J7unUZPvDz9y8ppxa48Z6glBcw18uk/dIgIHyg5rVwYTDCkYNf8DK5AGy1rwc6QuoTIdIX0BlOkT6AirTIdIXUJkOkb6AynSI9AVUpkOkL+CRzBE1u1OKJvbXMMypF45pt8HPY7oyd6PwLrtujOkCY4cJ7RS+T3UBsvZE5jU1+/gTdk5XwZjeHf2ij5cTwqtwMogXsqTMIbUGZvxkSq3mn9+rugBZ+yHz+N6K612OCvdrZ5h6D3RxguulzJ3zKSVGfKd9XRhfdYCsvZBZD2bmJ5tZli9pTiZw0L3N66ifUg9fjdRaYWz1AbL2QuZBOCeKUzooPbujTsxLO5OZMaP2Gpc3B8jaC5m73cXMLD3LBPYC/FeLl3my9oOHA2Ttx555kpo9sLxn1s3eiFn47RjXLNMs73ZKEddifNUBsvZDJp/O8jQPzGuSuZP0xwthS5k4/e3WgMPp6/oOISBrT2SaNG6pGc6swIzsPXO5lKVMXGf76Tpfj4Cs/ZH5CiN9AZXpEOkLqEyHSF9AZTpE+gIq0yHSF1CZDpG+gMp0iPQFVKZDpC9gZXKbB9AmhL+LbEKAP2BlyvYYRNtjng8mHDytbI/hxi20eaCHRhu3Xqb1PcnbigqNW0BbCv8tpZZCBoYxZXkP1awO/MATz0imIFNxgegRnSvZDzmvD3MAAAAASUVORK5CYII=" InformativeScreenshot="696e6d42f97546c4f20beefe44ad4812.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Intranet Newcon - Google Chrome' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                          </uix:NClick>
+                                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'OK'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NClick_29" InteractionMode="HardwareEvents" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="c0303db1-f2cc-4d88-813d-8221ab5031bc" Version="V3">
+                                            <uix:NClick.Target>
+                                              <uix:TargetAnchorable DesignTimeRectangle="607, 158, 64, 32" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'OK'" FullSelectorArgument="&lt;ctrl name='consorcio.sicredi.com.br diz' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' /&gt;" FuzzySelectorArgument="&lt;ctrl name='consorcio.sicredi.com.br diz' role='dialog' /&gt;&lt;ctrl name='OK' role='push button' automationid='' check:fulltext='OK' /&gt;" Guid="87f90896-6a8c-4551-b5a5-f4b3459d6308" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEQAAAAkCAYAAAAw55zoAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAJqSURBVGhD7Zq/TgJBEMZ9Dl9An4A38AWk8wnsLSxMrCi1MlrQWigdBYk22mGhxuYKCq8iFKICJ5I7jz+O++0yx5xQehtzt18ycfZuOfP92J2FDGvklFIKSNOPqXzWp82DLq3vveQ64BFe4VkqAXJ0/bnyhUUIeGdpIKCEGxuK2uV9SEH4rW/mXfAKz/DOK0UD2T7t6YtX3hddq9g6fk/o5TVKlTftFVAwBoMECNcMCBPlC/MceOOxG5CDAaSB8ASZFyWkZ8gBEZ4hB0R4hhwQ4RlyQIRnyAERniEHRHiGLALpU7U1oWCs/43SjNr+iHYrfD+kZ3U18IdmXBnRI+b2ItpJPedvA5K5JSCvVO3g68CMnr0R7Z9/0MnTmPBRKOqGc8MSSI9qXTV/PKFa9fez/jYgmdsBcvGlzbef+qnrpTssgW96bGC8ALJzP6FIwWvWX1PzswhI5laAlL2perJ6t5PtwWEgdFuDJA86MbXxV4EppeZmE5DMrQA59GdEYUyHS/eG1Ax5mxggRlOqZ7xVOCCZWwGy25qvkKV7BkLbw7dt3jKRlWLKAcncTg1pxKomLNeQsqoVWA23FxgzELVV6jEFnIv5WQQkcztA+NSQp4ynjmB1JeqM5qYXQHAq6W2GgnuTbWGFZG4JiIrKgKr+VEMwMp9DFttCAsHY1Jesj15I5vaA/NOQniEHRHiGHBDhGXJAhGfIARGeIQdEeIYcEOEZckCEZ0gD4XYeVNRGFRhAGohsZSKK0sqE15WtTG52o52HfmdRmt21hyhp46aa3ZD7OYRRAgQCJSwdril5DniEV14ZrBQQJ6IfpiFQNBWH+t8AAAAASUVORK5CYII=" InformativeScreenshot="f6887f81e539e8b78b3b4562ed2bf3af.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Intranet Newcon - Google Chrome' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                            </uix:NClick.Target>
+                                          </uix:NClick>
+                                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_16">
+                                            <Assign.To>
+                                              <OutArgument x:TypeArguments="x:Object">[row(0)]</OutArgument>
+                                            </Assign.To>
+                                            <Assign.Value>
+                                              <InArgument x:TypeArguments="x:Object">["Bem Desalienado"]</InArgument>
+                                            </Assign.Value>
+                                          </Assign>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,92" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="Info" Message="[&quot;Bem Desalienado&quot;]" />
+                                        </Sequence>
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </uix:NApplicationCard.Body>
+                              <uix:NApplicationCard.TargetApp>
+                                <uix:TargetApp Area="0, 0, 0, 0" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAaXSURBVFhH1ZZtbFRlFsfnEyKKjoKiInRooW/TTu9MW3lpaW87hb4hLfBl3WwXTTSriQaN2V3Xt4IxJhplWgoU+kKLoGyWIChqVhY6tLyK7vbLGokmjkBb2ipzS5EEuHee4/8597mdVirBtw+e5JdzztNnzu95bjqT6/rdRETX3N+UzNMHS3JDA8U53YPFOQYQCmMwmBPuL84J9Qazq9VHfp2QYghrB4qyo44QPaEXkv6ibBrQZc6hfs7ZMkcG9EDtWV3zqDE/LwaDuasgMRwRSzizhM6OEODMa4UBYfeg0P/V2QJtpRr30wI3DUkRD1bCfgzv122BrCFjYZ/MBf5R2U+9BTZ9TCCkxl5fQNA2cgu+icQW8EAIkFkke0dmo1HvQo16ALLozc8Sqm5T468d8rTOLRwBy9RwR9gnhzuSuNDOUpqfNZLPgJ48nzid57v2k+jRAw/yDRyBlKnBUiSH9+THBTwYfU+e3fNanm8MkDIja/N9q5RubGg7qj0ng/6IcxNbYt+Ih4+S9Jbl07mXX6DzrY3MUMNTNPRqJRlr/GS8BNZoQtZDnDXZqzVNDL2iGdStuZU2HoEdy2tXPxNUt8oSZ/Js6ZkFPiHX5Oml+OKH79KPhfhmL1ndS8j6OJvM436yjgdQ+4WFOqaydVwT5jFttdLGI/D2skjgrWXUWZVrPzIpRj69IFMi+laUkdnXy6K93Zfp0fbvqKpumJH13u4r/De61ItDVEjRWI5ljcq+6JinoL21rMq/vZokNa+VOlI6PT9TnJqfSb3LS1neZ8ToL23fUU7t0Lj8sfEC7+FDfJInRRBKMq/CPJShKz0OsLW6Lmt7ldAk26rogxW5dGpehmBwgAvv7+HLPdA4TNkvGlcDuVM/suUC7xWDeyDyCuuol0Y4JnM6EzuaFv9GQBrOerOKst5cShryog0V9FmhjyJzvXSmejEPfO9/l8kPgf8Fm4CsgZMdZC/3yrBO3CfMo2kQjiYVh0ql2JG0bqV3uXxblxq+rfcTMvnakcErj+dT5L50MfDXJ3jYw7iZBvFYouNg8F4ZsS+fgTAFwmSbIwxJzCPJhtK7XJntSwiIzDbOzLzNFfT/fK8wmtbzsPI3hijr+ejVQPjDvuz1If5M7HQ9ZHPIPDybLAnq0VnpXa4MiDPaKgXndpW3VNKqvxdSdHMDDyvF0EwIRuP7Qe8g98qIncIBDidBmCisw7Nw+yQcJhFrNkrvcnlbK6PeLRXCC6m3tQIgc18h9jet4WEPtQxTxnPnrouHWs7zZ2KfPyLF+I/3QOhBzRkkoE6IKj0O0FLRnd5STuktFZSOA3CNnNZaLv6wdqmQw3b/9xJ5MTz92XN2BjJ70TtrspZ5D/bKsE4sgGymsA7NFOahmYSsmIG1GWGld7nSmstDgNKayxTllNpcJpx+9xf7+RArm89TmhKmPfutQtZxljXYj18M7JQiMrvuZaxD00W8vpdiXdPjX8PUxjI9tblUpDZBCGROaUK/uRR1KeW2r6Ce4X7qicZYkPqPb8flzzig3DN8ET9EJ+ZCeA9ZXfcIq+tuYXbeTQ5YIzoyrUrpXS5Pm+5O2bzYSIEQmVI2AbsWkmRQ9HaNkIeQ8c6nl6imaYiKX40yNRC/ox673LNr32II74IsjtU1DWvTOMc6p32l1PGApDYZ4uTGRcR50yLBdaOqQdH2Gtp1ch+LxotdJz+ipdsrIbyTLMhkdrBkPniHnTun1iptPDwh3T1nY4kxZ+MiYiAfqbkvEbM3lghZ69v+RI/9e7WoP7GV1oG/HXiNAq3V2FdCO/fgR+bg1HGxDk4RIELhu8Z/WYXgydkbSsgmaGdIkzYEhV0HVR0kJzv7ktYH6YH2uZDcLsyDt0PocJvdh2/D39zC6pxy7ZfU2etLQnJYUkMxD7UpFomj+kT0WOM9vK44te9O3NAtzLAbQsmtDNY4x8Lu63s5TWoItsvBietsQWJDEQ4AZL+uiGZxX8yZa6w/vc1HZsctZIVvwQEmC7NjMurJAj3nK+HJ1/dS6kRifVHdrHrI1unCA7geQcd6vF+4KY++/mgKDnDzGKyOm4QkFr75p72WO+Gp11cm1BVGPHU6oRYK1IUiAThrzf/Cb3vHJEgn2fnAjTYdk4wrB256UI37eYFvhweS2oRQYQSQA9Y5522cJ2zhRLIkHRMhnhBFv5rC7qtfPn9JzFi7sGrGGwUhiMMz1xYYQPxz53TIJxjm/gnd5oEbQuZ/Juq/uvi3C5fre3NPTn98OIE0AAAAAElFTkSuQmCC" InformativeScreenshot="a869ecac41eab84c2c20932c6e591c59.jpg" Selector="&lt;html app='chrome.exe' title='Intranet Newcon' /&gt;" Title="Intranet Newcon" Url="https://consorcio.sicredi.com.br/frmMain.aspx" />
+                              </uix:NApplicationCard.TargetApp>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </uix:NApplicationCard>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:RetryScope.ActivityBody>
+                      <ui:RetryScope.Condition>
+                        <ActivityFunc x:TypeArguments="x:Boolean" />
+                      </ui:RetryScope.Condition>
+                    </ui:RetryScope>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+            <ui:WriteCsvFile AddHeaders="True" DataTable="[dt_data]" Delimitator="Semicolon" DisplayName="Write CSV" FilePath="Relatorio.csv" sap:VirtualizedContainerService.HintSize="588,153" sap2010:WorkflowViewState.IdRef="WriteCsvFile_3" ShouldQuote="True" />
+            <ui:SendExchangeMail Bcc="{x:Null}" Cc="{x:Null}" EmailAutodiscover="{x:Null}" MailMessage="{x:Null}" SecurePassword="{x:Null}" TimeoutMS="{x:Null}" sap2010:Annotation.AnnotationText="" ApplicationId="2abead93-2925-4927-a0d2-bb0c948f8808" AuthenticationMode="UserNameAndPassword" Body="Ola, segue em anexo relatorio da automacao" DirectoryId="3223964c-6e1f-48ba-b705-423351281a8c" DisplayName="Send Exchange Mail Message" Domain="sicredi.com.br" ExchangeVersion="Exchange2013_SP1" From="ocorrencias_formalistica@sicredi.com.br" sap:VirtualizedContainerService.HintSize="588,146" sap2010:WorkflowViewState.IdRef="SendExchangeMail_1" IsBodyHtml="True" IsDraft="False" Name="Consócrio Sicredi" Password="Ci15ro04an99%" SaveCopy="False" Server="[“https://outlook.office365.com/EWS/Exchange.asmx”]" Subject="Relatorio Desalienacao" To="andrade_cicero@sicredi.com.br;borges_gabriel@sicredi.com.br" User="app_consorcios_login@sicredi.com.br">
+              <ui:SendExchangeMail.Files>
+                <InArgument x:TypeArguments="x:String">
+                  <Literal x:TypeArguments="x:String">Relatorio.csv</Literal>
+                </InArgument>
+                <InArgument x:TypeArguments="x:String">
+                  <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="currentfile.fullname" />
+                </InArgument>
+              </ui:SendExchangeMail.Files>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:SendExchangeMail>
+            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="588,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_2" Path="Relatorio.csv" />
+            <ui:DeleteFileX DisplayName="Delete File" sap:VirtualizedContainerService.HintSize="588,80" sap2010:WorkflowViewState.IdRef="DeleteFileX_1" Path="[CurrentFile.FullName]" />
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachFileX.Body>
+    </ui:ForEachFileX>
+  </Sequence>
+</Activity>
